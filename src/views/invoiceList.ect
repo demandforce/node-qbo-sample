@@ -11,7 +11,8 @@
 		<div class="reviewForm">
 			<input type="button" name="submit"
 			value="Request a review" class="link-button-main requestReview"
-			data-customerId="<%- invoice.customer.id%>" data-customerName="<%- invoice.customer.fName%>">
+				data-customerId="<%- invoice.customer.id%>" data-customerName="<%- invoice.customer.firstName%>" data-businessId="1108474100"
+			data-email="<%- invoice.customer.email%>"
 		</div>
 	</li>
 <% end %>
@@ -26,10 +27,10 @@
 	<p>Invoice list is empty</p>
 <% end %>
 
-<form id="form_id<%-invoice.customer.firstName%>" action="/sendEmail" method="post" style="display:none;">
-	<input type="hidden" name="customerId" value="<%- invoice.customer.id%>">
-	<input type="hidden" name="customerName" value="<%- invoice.customer.firstName%>">
-	<input type="hidden" name="businessId" value="1108474100">
+<form id="form_id<%-invoice.customer.firstName%>" action="/email" method="post" style="display:none;">
+	<input type="hidden" name="businessName" value="<%- @company.CompanyName%>" id="businessName">
+	<input type="hidden" name="businessId" value="<%- @company.CompanyName%>" id="businessId">
+
 
 </form>
 
