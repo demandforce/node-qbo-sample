@@ -11,7 +11,6 @@ ect = (require 'ect')
   root: path.join __dirname, '/views'
   ext: '.ect'
 
-SendGrid = require("./sendgrid.coffee")
 File   = require("fs")
 root   = path.resolve(__dirname, "..")
 routes = path.resolve(root, "src/routes")
