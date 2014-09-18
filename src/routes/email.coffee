@@ -2,7 +2,7 @@
 email = require('../lib/email.coffee')
 
 module.exports = (app) ->
-  app.post "/sendEmail", (req, res) ->
+  app.post "/email", (req, res) ->
     business =
       name: req.body.business.name
       id: req.body.business.id
