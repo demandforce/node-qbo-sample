@@ -10,6 +10,8 @@ ect = (require 'ect')
   watch: true
   root: path.join __dirname, '/views'
   ext: '.ect'
+
+SendGrid = require("./sendgrid.coffee")
 privateKey = fs.readFileSync("src/config/certs/server.key")
 certificate = fs.readFileSync("src/config/certs/server.crt")
 credentials = {key: privateKey, cert: certificate}
@@ -21,6 +23,10 @@ app.use express.static 'src/public'
 
 app.get "/test", (req, res, next) ->
   res.render("test")
+
+app.post "sendEmail", (req, res, next) ->
+  SendGrid.sendEmail("Business!", "Customer!")
+  res.send "Sent (Asynchornously)"
 
 httpsServer = https.createServer(credentials, app)
 server = httpsServer.listen process.env.PORT || 3000, () ->
