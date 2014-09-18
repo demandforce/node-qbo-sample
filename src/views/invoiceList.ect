@@ -12,7 +12,10 @@
 			<input type="button" name="submit"
 			value="Request a review" class="link-button-main requestReview"
 				data-customerId="<%- invoice.customer.id%>" data-customerName="<%- invoice.customer.firstName%>" data-businessId="1108474100"
-			data-email="<%- invoice.customer.email%>"
+			data-email="<%- invoice.customer.email%>">
+		</div>
+		<div class="reviewSuccess" style="display:none;">
+			A review Request has been sent
 		</div>
 	</li>
 <% end %>

@@ -36,9 +36,22 @@ li.invoiceListItem {
 	padding: 10px;
 }
 
-.reviewForm {
+.reviewForm,.reviewSuccess {
 	float: right;
 	margin-top: -100px;
 	font-size: 25px;
 	margin-right: 200px;
+}
+
+.cname{
+ font-weight: bold;
+}
+.caddr{
+
+}
+.businessProfile{
+	background: #CEE;
+height: 60px;
+padding: 10px;
+font-size: 24px;
 }
