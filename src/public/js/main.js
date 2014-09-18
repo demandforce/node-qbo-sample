@@ -1,17 +1,16 @@
 $(document).ready(function(){
   $('.requestReview').on('click',function(e){
-      var transaction = $(this);
+      var thisel = $(this);
       var params = {
-      firstName : transaction.data('customername'),
-      email: transaction.data('email'),
+      firstName : thisel.data('customername'),
+      email: thisel.data('email'),
       businessName : $('#businessName').val(),
-      businessId : transaction.data('businessid')
+      businessId : thisel.data('businessid')
     };
 
     $.get('/email',params,function(e,r) {
-      alert("A review has been requested from the customer.");
-      transaction.siblings('.reviewSuccess').show();
-      transaction.hide();
+      thisel.siblings('.reviewSuccess').show(300);
+      thisel.hide();
 
     });
   });

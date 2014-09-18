@@ -36,12 +36,18 @@ li.invoiceListItem {
 	padding: 10px;
 }
 
-.reviewForm,.reviewSuccess {
+.reviewForm {
 	float: right;
 	margin-top: -100px;
 	font-size: 25px;
 	margin-right: 200px;
 }
+
+.reviewSuccess {
+	color:green;
+	
+}
+
 
 .cname{
  font-weight: bold;
