@@ -3,13 +3,13 @@ email = require('../lib/email.coffee')
 
 module.exports = (app) ->
   app.post "/sendEmail", (req, res) ->
-
     business =
-      name: "Brennan's Body Shop"
-      slug: "brennans-body"
+      name: req.body.business.name
+      id: req.body.business.id
 
     customer =
-      name: "Brennan Payne"
-      email: "brennan_payne@intuit.com"
+      name: req.body.customer.firstname
+      email: req.body.customer.email
+
     email.send(business, customer)
     res.send("sent", 200)
