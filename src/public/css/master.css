@@ -1,0 +1,15 @@
+.app-logo{
+	background: #ececec;
+	height: 60px;
+	background-repeat: no-repeat;
+	padding: 10px 10px;
+}
+
+.app-logo img {
+	width:200px;
+}
+
+div#address span {
+    padding: 0px 5px;
+    font-size: 75%;
+}

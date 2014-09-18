@@ -5,8 +5,8 @@ module.exports = (app) ->
   app.post "/email", (req, res) ->
 
     business =
-      name: "Brennan's Body Shop"
-      slug: "brennans-body"
+      name: "Vibe Yoga"
+      slug: "vibe-yoga"
 
     customer =
       name:
