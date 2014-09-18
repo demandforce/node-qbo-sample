@@ -1,0 +1,42 @@
+{
+  "name": "QBO-Local",
+  "description": "All calls to qbo apis",
+  "version": "0.1.0",
+  "homepage": "https://github.com/demandforce/qbo-local",
+  "author": {
+    "name": "Madhu Murali",
+    "email": "Madhukaran_Murali@intuit.com",
+    "url": "https://github.com/muralimadhu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/demandforce/qbo-local.git"
+  },
+  "bugs": {
+    "url": "https://github.com/demandforce/qbo-local/issues"
+  },
+  "main": "src/app",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node_modules/forever/bin/forever --minUptime 3000 --spinSleepTime 3000 -l app.log -c coffee -w src/app.coffee &"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "4.4.5",
+    "ect": "0.5.9",
+    "coffee-script": "1.7.1",
+    "cors": "2.3.1",
+    "forever": "0.11.0",
+    "grunt-shell": "0.7.0",
+    "node-quickbooks": "1.0.2"
+  },
+
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0"
+  }
+}
