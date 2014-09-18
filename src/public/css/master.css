@@ -11,5 +11,34 @@
 
 div#address span {
     padding: 0px 5px;
-    font-size: 75%;
+    font-size: 80%;
+}
+
+.created {
+		padding: 0px 5px;
+		font-size: 70%;
+}
+
+ul.invoiceList {
+    margin-left: 10px;
+}
+li.invoiceListItem {
+    border: 1px solid #BBD;
+}
+.invoiceItem {
+    padding: 10px;
+}
+.name {
+    font-weight: bold;
+}
+
+.pageTitle{
+	padding: 10px;
+}
+
+.reviewForm {
+	float: right;
+	margin-top: -100px;
+	font-size: 25px;
+	margin-right: 200px;
 }
