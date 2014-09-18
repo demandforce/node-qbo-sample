@@ -9,12 +9,13 @@ ECT = require('ect')
 
 path = require("path")
 
-  
+
 send = (business, customer) ->
   reviewLink = "https://localhost:8080/e/review?bid=#{business.id}&cname=#{customer.name}"
   root   = path.resolve(__dirname, "../..")
   emails = path.resolve(root, "src/emails")
   renderer = ECT(root : emails, ext : '.ect' )
+  console.log customer
   locals =
     reviewLink: reviewLink
     businessName: business.name
@@ -28,7 +29,7 @@ send = (business, customer) ->
     to:      "#{customer.name} <#{customer.email}>"
     subject: "Thank you for your business!"
 
-  console.dir emailOpts
+  # console.dir emailOpts
   server.send emailOpts, (err, message) ->
     console.log err || message
 
