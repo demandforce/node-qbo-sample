@@ -28,5 +28,5 @@ app.use express.static 'src/public'
 require(routes)(app)
 require(routes + "/email.coffee")(app)
 httpServer = http.createServer(app)
-server = httpServer.listen process.env.PORT || 3000, () ->
+server = httpServer.listen process.env.PORT || 8080, () ->
   console.log "Listening on #{server.address().port}"
