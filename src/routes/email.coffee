@@ -4,12 +4,12 @@ email = require('../lib/email.coffee')
 module.exports = (app) ->
   app.post "/email", (req, res) ->
     business =
-      name: req.body.business.name
-      id: req.body.business.id
+      name: req.body.businessName
+      id: req.body.businessId
 
     customer =
-      name: req.body.customer.firstname
-      email: req.body.customer.email
+      name: req.body.firstName
+      email: req.body.email
 
     email.send(business, customer)
     res.send("sent", 200)
