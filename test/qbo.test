@@ -1,9 +1,9 @@
 QuickBooks = require('node-quickbooks')
 qbo = new QuickBooks("qye2eXzQ3VKFhxbgS9MmBeocbpHZ6E",
-                         "OkGnidNxy3xxKdxdaI2uvI6PSzF2WP4ir5gh1yap",
-                         "qye2eoXk1sH4OJadIP2ln5sAM3L8uxlwB1diYePHewcsfuWQ",
-                         "2WgPMEhe9jrIYAjjQA7NuLEyikFxdonB5aiYnebP",
+                     "OkGnidNxy3xxKdxdaI2uvI6PSzF2WP4ir5gh1yap",
+                         "qye2enT6Duekw3S4UVxKs9nLJ0WcETb7xcyMXbQqLqcTiw4r",
+                         "qNtyLwlbAWXNh463x7mwrpiDYmL1AbnqjF5kiig3",
                          "1108474100",
                          true)
-qbo.getCompanyInfo "1108474100", (err, result) ->
+qbo.getCompanyInfo "2", (err, result) ->
   console.log result
