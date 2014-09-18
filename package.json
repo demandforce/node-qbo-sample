@@ -31,7 +31,9 @@
     "cors": "2.3.1",
     "forever": "0.11.0",
     "grunt-shell": "0.7.0",
-    "node-quickbooks": "1.0.2"
+    "node-quickbooks": "1.0.2",
+    "smtpapi": "~1.0.3",
+    "nodemailer": "0.7.0"
   },
 
   "devDependencies": {
