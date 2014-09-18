@@ -3,6 +3,7 @@ process.env.NODE_ENV ||= "development"
 express = require('express')
 app = express()
 http = require("http")
+bodyParser = require("body-parser")
 fs = require("fs")
 cors = require("cors")
 path = require("path")
@@ -24,7 +25,7 @@ app.set 'views', path.join(__dirname, '/views')
 app.set 'view engine', 'ect'
 app.engine 'ect', ect.render
 app.use express.static 'src/public'
-
+app.use(bodyParser.json())
 require(routes)(app)
 require(routes + "/email.coffee")(app)
 httpServer = http.createServer(app)

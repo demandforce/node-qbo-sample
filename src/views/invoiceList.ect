@@ -1,7 +1,6 @@
 <% invoiceHelper = (invoice) -> %>
 	<li class="invoiceListItem">
 		<div class="invoiceItem">
-
 			<div class="name"><%- invoice.customer.firstName%> <%- invoice.customer.lastName%></div>
 			<div id="address">
 				<span class="phone"><%- invoice.customer.phone%></span><span class="email"><%- invoice.customer.email%></span>
@@ -9,11 +8,16 @@
 			<div class="balance"><%- invoice.balance%></div>
 			<div class="created"><%- invoice.created%></div>
 		</div>
+		<div class="reviewForm">
+			<input type="button" name="submit"
+			value="Request a review" class="link-button-main requestReview"
+			data-customerId="<%- invoice.customer.id%>" data-customerName="<%- invoice.customer.fName%>">
+		</div>
 	</li>
 <% end %>
 
 <% if @invoices?.length : %>
-	<ul>
+	<ul class="invoiceList">
 		<% for invoice in @invoices : %>
 			<%- invoiceHelper invoice %>
 		<% end %>
@@ -21,14 +25,22 @@
 <% else : %>
 	<p>Invoice list is empty</p>
 <% end %>
-<!-- { created: 'September 18th 2014, 8:08:18 pm',
-    updated: 'September 18th 2014, 8:08:18 pm',
-    total: 21.6,
-    balance: 21.6,
-    dueDate: 'October 18th 2014',
-    customer:
-     { id: '58',
-       firstName: 'Madhu',
-       lastName: 'Murali',
-       phone: '(312) 420-3238',
-       email: 'dwarak85@gmail.com' } }, -->
+
+<form id="form_id<%-invoice.customer.firstName%>" action="/sendEmail" method="post" style="display:none;">
+	<input type="hidden" name="customerId" value="<%- invoice.customer.id%>">
+	<input type="hidden" name="customerName" value="<%- invoice.customer.firstName%>">
+	<input type="hidden" name="businessId" value="1108474100">
+
+</form>
+
+	<!-- { created: 'September 18th 2014, 8:08:18 pm',
+	    updated: 'September 18th 2014, 8:08:18 pm',
+	    total: 21.6,
+	    balance: 21.6,
+	    dueDate: 'October 18th 2014',
+	    customer:
+	     { id: '58',
+	       firstName: 'Madhu',
+	       lastName: 'Murali',
+	       phone: '(312) 420-3238',
+	       email: 'dwarak85@gmail.com' } }, -->
