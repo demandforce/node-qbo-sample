@@ -14,7 +14,7 @@ _findQbo = (companyId) ->
   return qbo
 
 _formatCustomer = (rawCustomer) ->
-  customer = 
+  customer =
     id: rawCustomer.Id
     firstName: rawCustomer.GivenName
     lastName: rawCustomer.FamilyName
@@ -41,7 +41,9 @@ module.exports = (app) ->
       qbo.findInvoices {desc: 'MetaData.CreateTime', limit: 10}, (err, result) ->
         raw = result.QueryResponse.Invoice
         invoices = raw.map (invoice) -> _formatInvoice(invoice, customers)
-        res.json(invoices)
+        console.log invoices
+        # res.json(invoices)
+        res.render('invoices', {invoices:invoices})
 
   app.get "/company/:companyId", (req, res) ->
     companyId = req.params.companyId

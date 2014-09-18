@@ -1,0 +1,11 @@
+<% extend 'layout' %>
+
+
+<div id="wrapper">
+	<h1><%- @title %></h1>
+	<% include 'invoiceList' %>
+</div>
+
+<% block 'footer-info' : %>
+	<div class="right">page: main</div>
+<% end %>
