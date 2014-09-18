@@ -10,7 +10,9 @@ $(document).ready(function(){
 
     $.get('/email',params,function(e,r) {
       alert("A review has been requested from the customer.");
+      transaction.siblings('.reviewSuccess').show();
       transaction.hide();
+
     });
   });
 });
