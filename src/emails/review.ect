@@ -5,7 +5,7 @@
   <title>Thank You!</title>
 </head>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" bgcolor="#f8f8f8" style="color:#404040;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" bgcolor="#f8f8f8" style="color:#404040;" >
     <tr>
         <td valign="top">
             <table max-width="560px" border="0" align="center" cellpadding="20"cellspacing="0" bgcolor="#fff" style="font-family:arial;">
@@ -14,11 +14,14 @@
                 </tr>
                 <tr>
                     <td style="border:1px solid #e7e7e7;border-bottom:2px solid #e7e7e7;">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="3" style="font-size:14px;">
-                            We noticed your recent business and we'd appreciate if you took a minute to leave a review on Intuit Local!
+                        <span style="font-size:24px">Hey <%= @customerName %>,</span>
+                        <br/>
+                        <br/>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3" style="font-size:16px;">
+                            We noticed your recent business at <%= @businessName %> and we'd appreciate if you took a minute to leave a review on Intuit Local!
                         </table>
-                        <center style="margin-top:30px; margin-bottom:25px">
-                            <a href="<%= @reviewLink %>" style="padding:10px 20px;margin-top:20px;background-color:#e77700;color:#fff;font-size:16px;border:none;cursor:pointer;text-decoration: none;">Leave a Review!</a>
+                        <center style="margin-top:40px; margin-bottom:15px">
+                            <a href="<%= @reviewLink %>" style="padding:10px 20px;margin-top:20px;background-color:#e77700;color:#fff;font-size:16px;border:none;cursor:pointer;text-decoration: none;">Leave a Review</a>
                         </center>
                     </td>
                 </tr>

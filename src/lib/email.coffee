@@ -17,6 +17,8 @@ send = (business, customer) ->
   renderer = ECT(root : emails, ext : '.ect' )
   locals =
     reviewLink: reviewLink
+    businessName: business.name
+    customerName: customer.name.first
 
   html = renderer.render('review', locals )
   emailOpts =

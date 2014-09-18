@@ -9,7 +9,9 @@ module.exports = (app) ->
       slug: "brennans-body"
 
     customer =
-      name: "Brennan Payne"
+      name:
+        first: "Brennan"
+        last: "Payne"
       email: "brennan_payne@intuit.com"
     email.send(business, customer)
     res.send("sent", 200)
