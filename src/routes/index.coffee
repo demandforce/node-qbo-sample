@@ -1,10 +1,11 @@
 QuickBooks = require('node-quickbooks')
 moment     = require('moment')
 qboCompany = {}
-consumerKey = "qye2eXzQ3VKFhxbgS9MmBeocbpHZ6E"
-consumerSecret = "OkGnidNxy3xxKdxdaI2uvI6PSzF2WP4ir5gh1yap"
-oauthToken = "qye2enT6Duekw3S4UVxKs9nLJ0WcETb7xcyMXbQqLqcTiw4r"
-oauthSecret = "qNtyLwlbAWXNh463x7mwrpiDYmL1AbnqjF5kiig3"
+credentials = require('../config/credentials')[process.env.NODE_ENV]
+consumerKey = credentials.consumerKey
+consumerSecret = credentials.consumerSecret
+oauthToken = "change me"
+oauthSecret = "change me"
 
 _findQbo = (companyId) ->
   qbo = qboCompany.companyId
@@ -27,7 +28,7 @@ _formatInvoice = (rawInvoice, customers) ->
     created: moment(rawInvoice.MetaData.CreateTime).format('MMMM Do YYYY, h:mm:ss a')
     updated: moment(rawInvoice.MetaData.LastUpdatedTime).format('MMMM Do YYYY, h:mm:ss a')
     total: rawInvoice.TotalAmt
-    balance: rawInvoice.Balance
+    balance: "$"+rawInvoice.Balance
     dueDate: moment(rawInvoice.DueDate).format('MMMM Do YYYY')
     customer: customer[0]
 
@@ -43,9 +44,9 @@ module.exports = (app) ->
         invoices = raw.map (invoice) -> _formatInvoice(invoice, customers)
         qbo.getCompanyInfo companyId, (err, result) ->
           locals =
-            invoices:invoices
+            invoices: invoices
             title: "Recent Transactions"
-            company: result          
+            company: result
           res.render('invoices', locals)
 
   app.get "/company/:companyId", (req, res) ->

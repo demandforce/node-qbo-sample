@@ -5,17 +5,8 @@
 			<div id="address">
 				<span class="phone"><%- invoice.customer.phone%></span><span class="email"><%- invoice.customer.email%></span>
 			</div>
-			<div class="balance"><%- invoice.balance%></div>
-			<div class="created"><%- invoice.created%></div>
-		</div>
-		<div class="reviewForm">
-			<div class="reviewSuccess" style="display:none;">
-				A review Request has been sent
-			</div>
-			<input type="button" name="submit"
-			value="Request a review" class="link-button-main requestReview"
-				data-customerId="<%- invoice.customer.id%>" data-customerName="<%- invoice.customer.firstName%>" data-businessId="1108474100"
-			data-email="<%- invoice.customer.email%>">
+			<div class="balance"><%- invoice.balance %></div>
+			<div class="created"><%- invoice.created %></div>
 		</div>
 	</li>
 <% end %>
@@ -34,17 +25,4 @@
 	<input type="hidden" name="businessName" value="<%- @company.CompanyName%>" id="businessName">
 	<input type="hidden" name="businessId" value="<%- @company.CompanyName%>" id="businessId">
 
-
 </form>
-
-	<!-- { created: 'September 18th 2014, 8:08:18 pm',
-	    updated: 'September 18th 2014, 8:08:18 pm',
-	    total: 21.6,
-	    balance: 21.6,
-	    dueDate: 'October 18th 2014',
-	    customer:
-	     { id: '58',
-	       firstName: 'Madhu',
-	       lastName: 'Murali',
-	       phone: '(312) 420-3238',
-	       email: 'dwarak85@gmail.com' } }, -->
