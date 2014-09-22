@@ -11,7 +11,7 @@ path = require("path")
 
 
 send = (business, customer) ->
-  reviewLink = "https://localhost:8080/e/review?bid=#{business.id}&cname=#{customer.name}"
+  reviewLink = "http://localhost:3000/e/review?bid=#{business.id}&cname=#{customer.name}"
   root   = path.resolve(__dirname, "../..")
   emails = path.resolve(root, "src/emails")
   renderer = ECT(root : emails, ext : '.ect' )
