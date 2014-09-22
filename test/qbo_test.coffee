@@ -3,6 +3,7 @@ QuickBooks = require('node-quickbooks')
 credentials = require('../src/config/credentials')[process.env.NODE_ENV || "test"]
 consumerKey = credentials.consumerKey
 consumerSecret = credentials.consumerSecret
+
 qbo = new QuickBooks(consumerKey,
                      consumerSecret,
                      "oauth token",
