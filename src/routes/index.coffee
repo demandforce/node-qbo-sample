@@ -37,6 +37,10 @@ module.exports = (app) ->
     companyId = req.params.companyId
     qbo = _findQbo(companyId)
     qbo.findCustomers (err, result) ->
+      unless result.QueryResponse
+        console.log result
+        res.status(500).send("Unable to Query Customers: #{result}")
+        return
       raw = result.QueryResponse.Customer
       customers = raw.map (customer) -> _formatCustomer(customer)
       qbo.findInvoices {desc: 'MetaData.CreateTime', limit: 10}, (err, result) ->
@@ -53,12 +57,20 @@ module.exports = (app) ->
     companyId = req.params.companyId
     qbo = _findQbo(companyId)
     qbo.getCompanyInfo companyId, (err, result) ->
-      res.json(result)
+      unless result.QueryResponse
+        console.log result
+        res.status(500).send("Unable to Query Company: #{result}")
+        return
+      res.json(result.QueryResponse)
 
   app.get "/company/:companyId/customers", (req, res) ->
     companyId = req.params.companyId
     qbo = _findQbo(companyId)
     qbo.findCustomers (err, result) ->
+      unless result.QueryResponse
+        console.log result
+        res.status(500).send("Unable to Query Customers: #{result}")
+        return
       raw = result.QueryResponse.Customer
       customers = raw.map (customer) -> _formatCustomer(customer)
       res.json(customers)
@@ -69,4 +81,8 @@ module.exports = (app) ->
     customerId = req.params.customerId
     qbo = _findQbo(companyId)
     qbo.findCustomers {Id: customerId}, (err, result) ->
+      unless result.QueryResponse
+        console.log result
+        res.status(500).send("Unable to Query Customers: #{result}")
+        return
       res.json(_formatCustomer(result.QueryResponse.Customer[0]))

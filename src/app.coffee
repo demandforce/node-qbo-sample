@@ -33,7 +33,7 @@ app.use express.static 'src/public'
 app.use(bodyParser.json())
 
 # enable sessions
-app.use(session({secret: 'brad smith'}))
+app.use(session({secret: 'brad smith', resave: true, saveUninitialized: true}))
 
 PORT = process.env.PORT || 8080
 app.PORT = PORT
