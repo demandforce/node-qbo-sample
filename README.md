@@ -43,7 +43,7 @@
   * `/company/:companyId/customer/:customerId`: Renders information about a particular customer (json)
 
 ## Test
-  You can also run `node_modules/coffee-script/bin/coffee test/qbo_test.coffee` to test if your credentials work fine. Make sure you replace you replace the `consumerKey` and `consumerSecret` values in `src/config/credentials.json` and also, the oauth token and oauth token secret values in the test file. Or if you want to write tests, run [mocha](http://visionmedia.github.io/mocha/). `test/mocha.opts` is already configured to run coffeescript
+  You can also run `node_modules/coffee-script/bin/coffee test/qbo_test.coffee` to test if your credentials work fine. Make sure you replace you replace the `consumerKey` and `consumerSecret` values in `src/config/credentials.json` and also, the oauth token and oauth token secret values in the test file. Or if you want to write tests, run [mocha](http://mochajs.org/). `test/mocha.opts` is already configured to run coffeescript
   
 
 
